@@ -1,0 +1,348 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+/* Estilo para los inputs con borde azul y esquinas redondas */
+
+.card .input-group input[type="text"],
+.card .input-group input[type="password"] {
+  border: 1px solid rgb(17, 17, 71) !important;
+  border-radius: 5px;
+  padding-left: 30px;
+  /* Ajusta el valor para dejar espacio al icono del candado */
+  padding-right: 30px;
+  /* Ajusta el valor para dejar espacio al icono del ojo */
+}
+
+/* Estilo para el span dentro de los input-group para que los íconos estén dentro del borde */
+
+.card .input-group .input-group-text {
+  background-color: transparent;
+  /* Hace que el fondo del span sea transparente */
+  border: none;
+  /* Elimina el borde del span */
+}
+
+/* Estilo específico para el contenedor del ícono */
+
+.card .input-group .input-group-prepend,
+.card .input-group .input-group-append {
+  background-color: transparent;
+  /* Hace que el fondo del contenedor sea transparente */
+  position: absolute;
+  /* Posiciona el contenedor */
+  height: 100%;
+  /* Ajusta la altura del contenedor */
+  width: 50px;
+  /* Ajusta el ancho del contenedor para cubrir todo el espacio del ícono */
+  display: flex;
+  /* Utiliza flexbox para alinear verticalmente el ícono */
+  align-items: center;
+  /* Alinea el ícono verticalmente */
+}
+
+/* Estilo específico para el ícono del candado */
+
+.card .input-group .input-group-prepend .input-group-text .bi {
+  margin: auto;
+  /* Centra el ícono horizontalmente dentro del contenedor */
+}
+
+/* Estilo específico para el contenedor del ícono del ojo */
+.card .input-group .input-group-append {
+  background-color: transparent; /* Hace que el fondo del contenedor sea transparente */
+  position: absolute; /* Posiciona el contenedor */
+  height: 100%; /* Ajusta la altura del contenedor */
+  width: auto; /* Deja que el ancho del contenedor se ajuste automáticamente */
+  display: flex; /* Utiliza flexbox para alinear los elementos */
+  align-items: center; /* Alinea verticalmente los elementos */
+  right: 0; /* Posiciona el contenedor al final del input */
+  padding-right: 5px; /* Ajusta el espacio entre el input y el contenedor */
+}
+
+/* Estilo específico para el ícono del ojo */
+.card .input-group .input-group-append .input-group-text .bi {
+  margin: auto; /* Centra el ícono horizontalmente dentro del contenedor */
+  border-left: 1px solid rgb(17, 17, 71); /* Agregamos una línea de borde al lado izquierdo */
+  padding-left: 10px;
+  z-index: 1000;
+}
+
+/* Estilo para el botón con fondo azul */
+
+.card .btn-primary {
+  background-color: rgb(17, 17, 71) !important;
+  border-color: blue !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo para el título principal */
+
+.card .card-header h5 .main-title {
+  color: rgb(17, 17, 71) !important;
+  font-weight: bold;
+  font-size: 20px;
+  /* ajusta el tamaño según lo necesites */
+  margin-bottom: 0;
+  /* quita el margen inferior */
+}
+
+/* Estilo para el subtítulo */
+
+.card .card-header h5 .subtitle {
+  color: rgb(17, 17, 71) !important;
+  font-weight: normal;
+  font-size: 16px;
+  /* ajusta el tamaño según lo necesites */
+}
+
+.error-message {
+  color: red;
+}
+
+/* Estilos específicos para hacer el formulario responsive */
+@media (max-width: 768px) {
+  .card {
+    margin-top: 50px; /* Ajusta el margen superior para que no se pegue al borde superior en pantallas pequeñas */
+  }
+
+  .card .col-md-4 {
+    max-width: 80%; /* Limita el ancho del formulario en pantallas pequeñas */
+  }
+}
+.superior {
+  background-color: rgb(255, 255, 255);
+  height: 50vh;
+  position: relative;
+  z-index: 1;
+}
+
+.inferior {
+  background: linear-gradient(135deg, #01335e, #026ac4);
+  height: 50vh;
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 150px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+width: 500px;
+  /* animation: moverArribaAbajo2 3s infinite; */
+  /* transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; */
+}
+/* .card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+} */
+
+.content-card {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  justify-content: space-around;
+  text-align: center;
+  align-items: baseline;
+  /* transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; */
+}
+/* .content-card .card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+} */
+.content-card .card:hover {
+  cursor: pointer;
+  /* transform: scale(1.1); */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.content_mensaje {
+  width: 90%;
+  top: -120px;
+  margin: auto;
+  padding: 150px;
+  color: rgb(11, 9, 85);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.content_float {
+  position: absolute;
+  display: flex;
+  top: 50vh;
+  right: 0;
+  width: 100%;
+  justify-content: space-around;
+  margin: auto;
+  z-index: 2;
+  height: auto;
+  background-color: transparent;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  .rotating-text-wrapper {
+    margin-top: 10px;
+    z-index: 100;
+    position: relative;
+  }
+  .card {
+    width: 400px;
+    margin-top: -160px;
+    position: relative;
+    transition: none;
+  }
+  .div {
+    background-color: #01335e;
+    margin: auto;
+  }
+  .content_float{
+margin-right: -5px;
+margin-left: 100px;
+
+  }
+}
+.card {
+  margin-top: -160px;
+}
+
+/*Animaciones para los botones flotantes*/
+
+.rotating-text-wrapper {
+  height: 10vh;
+  display: flex;
+  z-index: 100;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 100;
+}
+.rotating-text-wrapper h3 {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0.3em;
+  z-index: 100;
+
+  color: #1a2150;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+.rotating-text-wrapper h3:nth-child(1) {
+  background-color: rgba(255, 255, 255, 0);
+  animation-name: rotating-text-1;
+  border-radius: 10px;
+}
+.rotating-text-wrapper h3:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  animation-name: rotating-text-2;
+}
+.rotating-text-wrapper h3:nth-child(3) {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  animation-name: rotating-text-3;
+}
+@keyframes rotating-text-1 {
+  0% {
+    transform: translateY(200%);
+  }
+  33% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+  34% {
+    opacity: 0;
+  }
+}
+
+/*Contenedores y animaciones e los circulos*/
+.circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #01335e, #026ac4);
+  animation: move 5s infinite alternate;
+}
+
+.circle1 {
+  top: 10%;
+  left: 10%;
+  animation: move1 5s infinite alternate;
+}
+
+.circle2 {
+  top: 20%;
+  left: 60%;
+  animation: move2 4s infinite alternate;
+}
+
+.circle3 {
+  top: 50%;
+  left: 30%;
+  animation: move3 6s infinite alternate;
+}
+
+.circle4 {
+  top: 70%;
+  left: 80%;
+  animation: move4 5s infinite alternate;
+}
+
+.circle5 {
+  top: 80%;
+  left: 20%;
+  animation: move5 7s infinite alternate;
+}
+
+@keyframes move1 {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(20px, -50px);
+  }
+}
+
+@keyframes move2 {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-70px, 20px);
+  }
+}
+
+@keyframes move3 {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(15px, -15px);
+  }
+}
+
+@keyframes move4 {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-15px, 20px);
+  }
+}
+
+@keyframes move5 {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(20px, -10px);
+  }
+}
+
