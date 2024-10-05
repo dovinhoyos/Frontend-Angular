@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { ListVentasComponent } from './views/Venta/list-ventas/list-ventas.component';
+import { FormVentaComponent } from './views/Venta/form-venta/form-venta.component';
 
 const routes: Routes =[
+  {path: 'ventas/agregar', component: FormVentaComponent},
+  {path: 'ventas/editar/:id', component: FormVentaComponent},
   {
     path: '',
     redirectTo: 'dashboard',

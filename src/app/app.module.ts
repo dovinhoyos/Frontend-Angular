@@ -13,6 +13,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import {AuthInterceptor} from './Services/Usuario/auth.interceptor';
 import {LoginService} from './Services/Usuario/login.service';
 import { ListVentasComponent } from './views/Venta/list-ventas/list-ventas.component';
+import { FormVentaComponent } from './views/Venta/form-venta/form-venta.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -34,7 +35,8 @@ import { ListVentasComponent } from './views/Venta/list-ventas/list-ventas.compo
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-    ListVentasComponent
+    ListVentasComponent,
+    FormVentaComponent
   ],
   providers: [
     JwtHelperService,
