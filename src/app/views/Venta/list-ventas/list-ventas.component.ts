@@ -20,4 +20,12 @@ export class ListVentasComponent implements OnInit {
     this.ventaService.getVentas().subscribe(data => this.ventas = data[0])
   }
 
+  eliminarVenta(id: number): void {
+    if (confirm('¿Estás seguro de eliminar este producto?')) {
+      this.ventaService.deleteVenta(id).subscribe(() => {
+        this.listarVentas(); // Recargar lista después de eliminar
+      });
+    }
+  }
+
 }

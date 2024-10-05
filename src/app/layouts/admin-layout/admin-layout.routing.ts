@@ -9,6 +9,7 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {LoginComponent} from '../../views/Usuario/login/login.component'
+import { ListVentasComponent } from '../../views/Venta/list-ventas/list-ventas.component'
 import {AuthGuard  } from "../../auth/auth.guard";
 
 
@@ -59,6 +60,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'Panel',      component: DashboardComponent, canActivate: [AuthGuard]},
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
+    { path: 'ventas-list',     component: ListVentasComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },

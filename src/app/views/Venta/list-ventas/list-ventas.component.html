@@ -1,28 +1,53 @@
-<div class="container">
-    <h2>Lista de Ventas</h2>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>ID Venta</th>
-          <th>ID Usuario</th>
-          <th>Nombre Usuario</th>
-          <th>Fecha Venta</th>
-          <th>Total</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let venta of ventas">
-          <td>{{ venta.id_venta }}</td>
-          <td>{{ venta.id_usuario }}</td>
-          <td>{{ venta.nombre }}</td>
-          <td>{{ venta.fecha_venta }}</td>
-          <td>{{ venta.total}}</td>
-          <td>
-            <button class="btn btn-danger" (click)="eliminarProducto(producto.id)">Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Tabla de ventas</h4>
+                      <p class="card-category"> Listado de las ventas</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID Venta
+                                  </th>
+                                  <th>
+                                      ID Usuario
+                                  </th>
+                                  <th>
+                                      Nombre Usuario
+                                  </th>
+                                  <th>
+                                      Fecha Venta
+                                  </th>
+                                  <th>
+                                      Total
+                                  </th>
+                                  <th>
+                                      Acciones
+                                  </th>
+                              </thead>
+                              <tbody *ngFor="let venta of ventas">
+                                  <tr>
+                                    <td>{{ venta.id_venta }}</td>
+                                    <td>{{ venta.id_usuario }}</td>
+                                    <td>{{ venta.nombre }}</td>
+                                    <td>{{ venta.fecha_venta}}</td>
+                                    <td>{{ venta.total }}</td>
+                                    <td>
+                                        <button class="btn btn-danger" (click)="eliminarVenta(venta.id_venta)">Eliminar</button>
+                                    </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
+</div>
   

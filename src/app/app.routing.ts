@@ -7,7 +7,6 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { ListVentasComponent } from './views/Venta/list-ventas/list-ventas.component';
 
 const routes: Routes =[
-  {path: 'ventas', component: ListVentasComponent},
   {
     path: '',
     redirectTo: 'dashboard',
