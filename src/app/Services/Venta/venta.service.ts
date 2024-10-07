@@ -24,9 +24,8 @@ export class VentaService {
     return this.httpClient.post<any>(`${this.baseUrl}crearVenta`, venta);
   }
 
-  updateVenta(id: number, producto: any): Observable<any> {
-    const body = { id, ...producto };  // Incluimos el id en el body
-    return this.httpClient.put<any>(`${this.baseUrl}actualizarVenta`, body);  // Ya no pasamos el id en la URL
+  updateVenta(id: number, venta: any): Observable<any> {  
+    return this.httpClient.put<any>(`${this.baseUrl}actualizarVenta/${id}`, venta); 
   }
   
   deleteVenta(id: number): Observable<any> {

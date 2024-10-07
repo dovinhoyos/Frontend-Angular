@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { VentaService } from 'app/Services/Venta/venta.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-form-venta',
@@ -12,22 +12,23 @@ export class FormVentaComponent implements OnInit {
   ventaForm: FormGroup;
   id: number | null = null;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute,
-    private router: Router, private ventaService: VentaService) { 
+  constructor(private fb: FormBuilder, private ventaService: VentaService, public dialogRef: MatDialogRef<FormVentaComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { id: number | null }) { 
       this.ventaForm = this.fb.group({
         idUsuario: ['', Validators.required],
+        fechaVenta: ['', Validators.required],
         total: ['', Validators.required]
       });
     }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id') ? +this.route.snapshot.paramMap.get('id') : null;
+    this.id = this.data.id;
     if (this.id) {
-      this.cargarProducto(this.id);
+      this.cargarVenta(this.id);
     }
   }
 
-  cargarProducto(id: number): void {
+  cargarVenta(id: number): void {
     this.ventaService.getVenta(id).subscribe(data => {
       this.ventaForm.patchValue(data);
     });
@@ -38,15 +39,19 @@ export class FormVentaComponent implements OnInit {
       if (this.id) {
         // Editar producto
         this.ventaService.updateVenta(this.id, this.ventaForm.value).subscribe(() => {
-          this.router.navigate(['/ventas-list']);
+          this.dialogRef.close(true);
         });
       } else {
         // Crear producto
         this.ventaService.addVenta(this.ventaForm.value).subscribe(() => {
-          this.router.navigate(['/ventas-list']);
+          this.dialogRef.close(true);
         });
       }
     }
+  }
+
+  cancelar(): void {
+    this.dialogRef.close(); // Cerrar el modal si se cancela la acción
   }
 
 }

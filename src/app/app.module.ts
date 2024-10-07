@@ -14,6 +14,10 @@ import {AuthInterceptor} from './Services/Usuario/auth.interceptor';
 import {LoginService} from './Services/Usuario/login.service';
 import { ListVentasComponent } from './views/Venta/list-ventas/list-ventas.component';
 import { FormVentaComponent } from './views/Venta/form-venta/form-venta.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -30,6 +34,10 @@ import { FormVentaComponent } from './views/Venta/form-venta/form-venta.componen
         }
       }
     }),
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   declarations: [
     AppComponent,

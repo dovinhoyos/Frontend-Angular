@@ -15,10 +15,10 @@
                                       ID Venta
                                   </th>
                                   <th>
-                                      ID Usuario
+                                      ID Cliente
                                   </th>
                                   <th>
-                                      Nombre Usuario
+                                      Nombre Cliente
                                   </th>
                                   <th>
                                       Fecha Venta
@@ -38,11 +38,13 @@
                                     <td>{{ venta.fecha_venta}}</td>
                                     <td>{{ venta.total }}</td>
                                     <td>
-                                        <button class="btn btn-danger" (click)="eliminarVenta(venta.id_venta)">Eliminar</button>
+                                        <button mat-raised-button class="btn btn-warning btn-sm" (click)="actualizarVenta(venta.id_venta)">Editar</button>
+                                        <button mat-raised-button class="btn btn-danger btn-sm" (click)="eliminarVenta(venta.id_venta)">Eliminar</button> 
                                     </td>
-                                  </tr>
-                              </tbody>
-                          </table>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button mat-raised-button class="btn btn-success pull-right" (click)="agregarVenta()">Agregar</button>
                       </div>
                   </div>
               </div>

@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <h2>{{ id ? 'Editar Producto' : 'Agregar Producto' }}</h2>
     <form [formGroup]="ventaForm" (ngSubmit)="guardarVenta()">
       <div class="mb-3">
@@ -8,10 +8,50 @@
   
       <div class="mb-3">
         <label for="total" class="form-label">Total de la venta</label>
-        <input id="total" type="number" class="form-control" formControlName="total" />
+        <input id="total" type="number" step="0.01" class="form-control" formControlName="total" />
       </div>
   
       <button type="submit" class="btn btn-primary">{{ id ? 'Actualizar' : 'Agregar' }}</button>
     </form>
-  </div>
+  </div> -->
   
+  <div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">{{ id ? 'Editar Venta' : 'Agregar Venta' }}</h4>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="ventaForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="ID cliente" id="idUsuario" type="number" formControlName="idUsuario" >
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Fecha venta" id="fechaVenta" type="date" formControlName="fechaVenta">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Total venta" id="total" type="number" step="0.01" formControlName="total">
+                                  </mat-form-field>
+                                </div>
+                            </div>  
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="guardarVenta()">{{ id ? 'Editar' : 'Agregar' }}</button>
+                            <button mat-raised-button class="btn btn-default pull-right" (click)="cancelar()">Cancelar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
