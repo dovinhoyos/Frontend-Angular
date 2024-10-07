@@ -19,7 +19,7 @@ export class ListVentasComponent implements OnInit {
   }
 
   listarVentas(): void {
-    this.ventaService.getVentas().subscribe(data => this.ventas = data[0])
+    this.ventaService.getVentas().subscribe(data => this.ventas = data)
   }
 
   agregarVenta(): void {
@@ -44,7 +44,7 @@ export class ListVentasComponent implements OnInit {
   }
 
   eliminarVenta(id: number): void {
-    if (confirm('¿Estás seguro de eliminar este producto?')) {
+    if (confirm('¿Estás seguro de eliminar esta venta?')) {
       this.ventaService.deleteVenta(id).subscribe(() => {
         this.listarVentas(); // Recargar lista después de eliminar
       });
