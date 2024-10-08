@@ -19,8 +19,8 @@ export class FormVentaComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: { id: number | null }
   ) {
     this.ventaForm = this.fb.group({
-      id_usuario: ["", Validators.required],
-      fecha_venta: ["", Validators.required],
+      idUsuario: ["", Validators.required],
+      fechaVenta: ["", Validators.required],
       total: ["", Validators.required],
     });
   }
@@ -36,14 +36,14 @@ export class FormVentaComponent implements OnInit {
     this.ventaService.getVenta(id).subscribe({
       next: (data) => {
         if (data) {
-          const{ id_usuario, fecha_venta, total} = data;
+          const { id_usuario, fecha_venta, total } = data;
           const fechaISO = new Date(fecha_venta)
             .toISOString()
             .substring(0, 10);
           this.ventaForm.patchValue({
-            id_usuario,
-            fecha_venta: fechaISO,
-            total,
+            idUsuario: id_usuario,
+            fechaVenta: fechaISO,
+            total: total,
           });
         }
       },
@@ -69,6 +69,7 @@ export class FormVentaComponent implements OnInit {
         });
       }
     }
+    console.log(this.ventaForm.value)
   }
 
   cancelar(): void {
